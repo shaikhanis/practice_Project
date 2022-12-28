@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <title>Assignment</title>
     <link rel="stylesheet" href="./css/style.css">
 
+
+    <title>Assignment1</title>
+
 </head>
+
 
 <body>
     <!-- <div class="container-fluid text-center"> -->
@@ -47,209 +51,198 @@
             </div>
         </div>
     </nav><br>
-    <div class="col-md-11 offset-md-1 heading">Breakfast Place in Mumbai</div><br>
 
-    <div class="row">
+    <div class="main">
 
+        <h1 class="darkBlue resultHeading">Breakfast Place in Mumbai</h1>
 
-        <!-- box start here  -->
-        <div class="col-md-2 offset-md-1 filters">
-            <br>
-
-            <span class="com-md-11 offset-md-1 filter">Filters</span><br />
-            <span class=" offset-md-1 text-muted location">Select Location</span><br>
-
-            <select class=" offset-md-1 from-select box" air table="Default select example">
-                <option select desable>Select Location</option>
-                <option value>Mumbai India</option>
-                <option value>Mumbai-Bangalore Highyay </option>
-                <option value>Mumbai Central Railway Statin </option>
-                <option value>Mumbai Airport Lounge </option>
-                <option value>Mumbau Pune Expressway </option>
-                <option value>Mumbai CST Area </option>
-            </select><br><br />
-
-            <span class="offset-md-1 text-muted"> Cuisine</span><br><br />
+        <!--  -->
+        <button onclick="toggleFilters()" class="filtersButton">
+            <p class="darkBlue">Filters / Sort</p>
+            <i id='filtersButtonArrow' class="arrow arrowDown"></i>
+        </button>
+        <!--  -->
 
 
+        <div class="mainContent">
+            <form id="filters" method="GET" class="filters">
+                <h4>Filters</h4>
+                <h5>Select Location</h5>
 
-            <div class=" offset-md-1 from check ">
-                <input class="form-check-input  " type="checkbox" value="North India" id="chbNorthIndian">
-                <label class="from-check-label  " for="chbNorthIndia">North India</label>
-            </div>
+                <!--  -->
 
-            <div class=" offset-md-1 from check ">
-                <input class="form-check-input  " type="checkbox" value="South India" id="chbSouthIndian">
-                <label class="from-check-label  " for="chbSouthIndia">South India</label>
-            </div>
-
-            <div class=" offset-md-1 from check ">
-                <input class="form-check-input  " type="checkbox" value="chainese" id="chbchainese">
-                <label class="from-check-label  " for="chbchainese">chainese</label>
-            </div>
-
-            <div class=" offset-md-1 from check ">
-                <input class="form-check-input  " type="checkbox" value="Fast Food" id="chbFastFood">
-                <label class="from-check-label  " for="chbFastFood">Fast Food</label>
-            </div>
-
-
-
-            <div class=" offset-md-1 from check ">
-                <input class="form-check-input  " type="checkbox" value="Street Food" id="chbStreetFood">
-                <label class="from-check-label  " for="chbStreetFood">Street Food</label>
-            </div>
+                <select class="locationSelect">
+                    <option id="opt1" value="none" class="locationOption">
+                        <p>Select Location</p>
+                    </option>
+                    <option value="Mumbai India" class="locationOption">Mumbai India</option>
+                    <option value="Mumbai-Bangalore Highyay" class="locationOption">Mumbai-Bangalore Highyay</option>
+                    <option value="Mumbai Central Railway Statin" class="locationOption">
+                        Mumbai Central Railway Statin
+                    </option>
+                    <option value="Mumbai Airport Lounge" class="locationOption">Mumbai Airport Lounge</option>
+                    <option value="Mumbai CST Area i" class="locationOption">Mumbai CST Area </option>
+                    <option value="Chennai" class="locationOption">Chennai</option>
+                </select>
+                <!--  -->
 
 
+                <h5>Cuisine</h5>
+                <div class="cuisines">
+                    <label class="cuisine">North Indian
+                        <input type="checkbox" name="northIndian" id="northIndian" />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">South Indian
+                        <input type="checkbox" name="southIndian" id="southIndian" checked />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">Chinese
+                        <input type="checkbox" name="chinese" id="chinese" checked />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">Fast Food
+                        <input type="checkbox" name="fastFood" id="fastFood" />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">Street Food
+                        <input type="checkbox" name="streetFood" id="streetFood" />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                </div>
+                <h5>Cost For Two</h5>
+                <div class="costRange">
+                    <label class="cost">Less than 500
+                        <input type="radio" name="costRange" value="500" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 500 to ` 1000
+                        <input type="radio" name="costRange" value="500-1000" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 1000 to ` 1500
+                        <input type="radio" name="costRange" value="1000-1500" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 1500 to ` 2000
+                        <input type="radio" name="costRange" value="1500-2000" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 2000+
+                        <input type="radio" name="costRange" value="2000+" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                </div>
+                <h4>Sort</h4>
+                <label class="sort">Price low to high
+                    <input type="radio" name="sortdirection" value="l2h" />
+                    <span class="radioCircle"></span>
+                    <span class="radioInnerCircle"></span>
+                </label>
+                <label class="sort">Price high to low
+                    <input type="radio" name="sortdirection" value="h2l" />
+                    <span class="radioCircle"></span>
+                    <span class="radioInnerCircle"></span>
+                </label>
 
-            <div class=" offset-md-1 from check ">
-                <input class="form-check-input  " type="checkbox" value="North India" id="chbNorthIndian">
-                <label class="from-check-label  " for="chbNorthIndia">North India</label>
-            </div><br />
+                <button class="applyFilters">
+                    Apply
+                </button>
+            </form>
 
-
-
-            <span class="offset-md-1 text-muted">Cost For Two</span><br><br />
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="cost" id="rb0.5kto1k" value="0-500">
-                <label class="form-check-label" for="rb0.5kto1k">Less Than 500</label>
-            </div>
-
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="cost" id="rb0.5kto1k" value="500-1000">
-                <label class="form-check-label" for="rb0.5kto1k">500 - 1000</label>
-            </div>
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="cost" id="rb1kto1.5k" value="1000-1500">
-                <label class="form-check-label" for="rb1kto1.5k">1000 - 1500</label>
-            </div>
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="cost" id="rb1.5kto2k" value="1500-2000">
-                <label class="form-check-label" for="rb1.5kto2k">1500 - 2000</label>
-            </div>
-
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="cost" id="rb2k+" value="2000">
-                <label class="form-check-label" for="rb2k+">2000+</label>
-            </div></br>
-
-            <span class=" offset-md-1 sort"> Sort</span><br><br />
-
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="sort" id="rbPriceHighToLow" value="HighToLow">
-                <label class="form-check-label" for="rbPriceHighToLow"> Price - low to high </label>
-            </div>
-
-            <div class=" offset-md-1 form-check">
-                <input class="form-check-input" type="radio" name="sort" id="rbPriceHighToLow" value="HighToLow">
-                <label class="form-check-label" for="rbPriceHighToLow"> Price - high to low</label>
-            </div>
-        </div>
-        <!-- box end Here -->
-
-        <div class=" col-md-12 imageblock">
-
-            <!--  -->
-            <div class="block1">
-
-                <div class="card mb-2">
-                    <!-- card has 2rows -->
-                    <div class="row g-0">
-
-                        <!-- first part for image -->
-                        <div class="col-md-4 offset-md-1 image">
-                            <img src="./assets/images/image1.png" class="img-fluid rounded-start" alt="image">
+            <div class="products">
+                <div class="productList">
+                    <div class="product">
+                        <div class="productHead">
+                            <img src="./assets/images/image1.png" alt="image"/>
+                            <div class="placeDesc">
+                                <h1 class="darkBlue">The Big Chill Cakery</h1>
+                                <h4 class="darkBlue">Fort</h4>
+                                <p class="darkBlue">Shop 1, Plot D, Samruddhi Complex, Chincholi …</p>
+                            </div>
                         </div>
-                        <!-- second part for heading and subheading -->
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <span class="chill">The Big Chill Cakery</span><br />
-                                <span class="fort">FORT</span><br />
-                                <span class="text-muted">Shop 1, Piot Samruddhi Complex Chincholi...</span>
+
+                        <div class="productFoot">
+                            <div class="featureLabels">
+                                <p>CUISINES:</p>
+                                <p>COST FOR TWO:</p>
+                            </div>
+                            <div class="features darkBlue">
+                                <p>Bakery</p>
+                                <p>₹ 700</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- row to hold Cuisine and price -->
-                    <!-- header end here -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <hr />
-                            <p class="res-info">
-                                <span class="text-muted"> CUISINES: COST FOR TWO:</span><br />
-                                <span class="text-muted"> Bakery ₹ 700</span>
-                            </p>
+                    <div class="product">
+                        <div class="productHead">
+                            <img src="./assets/images/image2.png" alt="image"/>
+                            <div class="placeDesc">
+                                <h1 class="darkBlue">The Bake Shop</h1>
+                                <h4 class="darkBlue">Cafe</h4>
+                                <p class="darkBlue">Shop 101, Model Town Road, Ludhiana …</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div><br><br />
 
-            <div class="block2">
-                <div class="card mb-2">
-                    <!-- card has 2rows -->
-                    <div class="row g-0">
-
-                        <!-- first part for image -->
-                        <div class="col-md-4 offset-md-1 image">
-                            <img src="./assets/images/image1.png" class="img-fluid rounded-start" alt="image">
-                        </div>
-                        <!-- second part for heading and subheading -->
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <span class="chill">The Big Chill Cakery</span><br />
-                                <span class="fort">FORT</span><br />
-                                <span class="text-muted">Shop 1, Piot Samruddhi Complex Chincholi...</span>
+                        <div class="productFoot">
+                            <div class="featureLabels">
+                                <p>CUISINES:</p>
+                                <p>COST FOR TWO:</p>
+                            </div>
+                            <div class="features darkBlue">
+                                <p>Bakery</p>
+                                <p>₹ 700</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- row to hold Cuisine and price -->
-                    <!-- header end here -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <hr />
-                            <p class="res-info">
-                                <span class="text-muted"> CUISINES: COST FOR TWO:</span><br />
-                                <span class="text-muted"> Bakery ₹ 700</span>
-                            </p>
-                        </div>
-                    </div>
                 </div>
-            </div><br><br/>
 
-    <!-- pagination start her -->
+                <!-- pagination start here -->
+                <div class="productsNavButtons">
+                    <button class="productButton" id="prevButton">
+                        <i>&#x221F;</i>
+                    </button>
+                    <button class="productButton selectedButton">
+                        <span>1</span>
+                    </button>
+                    <button class="productButton">
+                        <span>2</span>
+                    </button>
+                    <button class="productButton">
+                        <span>3</span>
+                    </button>
+                    <button class="productButton">
+                        <span>4</span>
+                    </button>
+                    <button class="productButton">
+                        <span>5</span>
+                    </button>
+                    <button class="productButton" id="nextButton">
+                        <i>&#x221F;</i>
+                    </button>
+                </div>
 
-            <div class="offset-md-4">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item ">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item "><a class="page-link" href="#">1</a></li>
-                        <li class="page-item "><a class="page-link" href="#">2</a></li>
-                        <li class="page-item "><a class="page-link" href="#">3</a></li>
-                        <li class="page-item "><a class="page-link" href="#">4</a></li>
-                        <li class="page-item "><a class="page-link" href="#">5</a></li>
-        
-                        <li class="page-item ">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <!-- pagination end her -->
             </div>
-    <!-- pagination end here -->
         </div>
+
     </div>
+
+
 
 </body>
 
